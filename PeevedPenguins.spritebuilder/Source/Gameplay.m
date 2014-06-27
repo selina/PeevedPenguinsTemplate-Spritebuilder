@@ -112,6 +112,11 @@ CCPhysicsJoint *_penguinCatapultJoint;
 
 -(void)sealRemoved:(CCNode *)seal {
     [seal removeFromParent];
+    CCParticleSystem *explosion = (CCParticleSystem *)[CCBReader load:@"SealExplosion"];
+    explosion.autoRemoveOnFinish = true;
+    explosion.position = seal.position;
+    [seal.parent addChild:explosion];
+    [seal removeFromParent];
 }
 
 
