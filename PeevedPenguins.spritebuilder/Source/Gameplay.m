@@ -40,5 +40,7 @@ CCNode *_catapultArm;
 }
 
 
-
+-(void)retry {
+    [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
+}
 @end
