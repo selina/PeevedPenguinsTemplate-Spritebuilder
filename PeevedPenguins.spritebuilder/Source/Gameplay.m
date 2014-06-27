@@ -18,7 +18,7 @@ CCNode *_catapultArm;
 -(void)didLoadFromCCB {
     self.userInteractionEnabled = true;
     CCScene *level = [CCBReader loadAsScene: @"Levels/Level1"];
-    [levelNode addChild:level];
+    [_levelNode addChild:level];
 }
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
