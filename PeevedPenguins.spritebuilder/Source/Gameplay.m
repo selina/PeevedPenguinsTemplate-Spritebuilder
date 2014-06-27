@@ -14,13 +14,15 @@ CCPhysicsNode *_physicsNode;
 CCNode *_levelNode;
 CCNode *_catapultArm;
 CCNode *_contentNode;
+CCNode *_pullbackNode;
 }
 
 -(void)didLoadFromCCB {
     self.userInteractionEnabled = true;
     CCScene *level = [CCBReader loadAsScene: @"Levels/Level1"];
     [_levelNode addChild:level];
-    _physicsNode.debugDraw = true; 
+    _physicsNode.debugDraw = true;
+    _pullbackNode.physicsBody.collisionMask = @[];
 }
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
