@@ -11,11 +11,14 @@
 @implementation Gameplay {
 
 CCPhysicsNode *_physicsNode;
+CCNode *_levelNode;
 CCNode *_catapultArm;
 }
 
 -(void)didLoadFromCCB {
     self.userInteractionEnabled = true;
+    CCScene *level = [CCBReader loadAsScene: @"Levels/Level1"];
+    [levelNode addChild:level];
 }
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
@@ -31,4 +34,7 @@ CCNode *_catapultArm;
     CGPoint force = ccpMult(launchDirection, 8000);
     [penguin.physicsBody applyForce:force];
 }
+
+
+
 @end
