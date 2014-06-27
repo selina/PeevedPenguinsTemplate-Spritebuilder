@@ -8,6 +8,7 @@
 
 #import "Seal.h"
 
+
 @implementation Seal
 
 -(void)didLoadFromCCB {
